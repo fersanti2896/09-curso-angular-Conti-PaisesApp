@@ -38,7 +38,7 @@ export class VerPaisComponent implements OnInit {
           /* switchMap - Devuelve un observable dentro de un observable */
           .pipe(
             switchMap((param) => this.paisService.getPaisPorCode(param.id)),
-            tap(console.log)
+            // tap(console.log)
           )
           .subscribe(pais => this.pais = pais);  
   }
