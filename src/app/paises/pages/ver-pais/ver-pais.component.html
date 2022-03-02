@@ -1,0 +1,71 @@
+<div *ngIf="!pais else divPais" class="alert alert-info">
+    Espere por favor...
+</div>
+
+<ng-template #divPais>
+    <div class="row">
+        <div class="col-12">
+            <h1>País: <small>{{ pais.name }}</small></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <h3>Bandera: </h3>
+            <img [src]="pais.flags.svg" class="img-thumbnail">
+        </div>
+
+        <div class="col">
+            <h3>Información:</h3>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action">
+                    <strong>Capital: </strong> {{ pais.capital }}
+                </li>
+                <li class="list-group-item list-group-item-action">
+                    <strong>Idioma Oficial: </strong> {{ pais.languages[0].nativeName }}
+                </li>
+                <li class="list-group-item list-group-item-action">
+                    <strong>Región: </strong> {{ pais.region }}
+                </li>
+                <li class="list-group-item list-group-item-action">
+                    <strong>Subregión: </strong> {{ pais.subregion }}
+                </li>
+                <li class="list-group-item list-group-item-action">
+                    <strong>Población: </strong> {{ pais.population | number }}
+                </li>
+                <li class="list-group-item list-group-item-action">
+                    <strong>Latitud: </strong> {{ pais.latlng[0] | number }}
+                    <strong>Longitud: </strong> {{ pais.latlng[1] | number }}
+                </li>
+                <li class="list-group-item list-group-item-action">
+                    <strong>Superficie: </strong> {{ pais.area | number }} km<sup>2</sup>
+                </li>
+                <li class="list-group-item list-group-item-action">
+                    <strong>Código: </strong> {{ pais.alpha2Code }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Traducciones</h3>
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primary mr-1">{{ pais.translations.br }}</span>
+            <span class="badge bg-primary mr-1">{{ pais.translations.pt }}</span>
+            <span class="badge bg-primary mr-1">{{ pais.translations.nl }}</span>
+            <span class="badge bg-primary mr-1">{{ pais.translations.hr }}</span>
+            <span class="badge bg-primary mr-1">{{ pais.translations.fa }}</span>
+            <span class="badge bg-primary mr-1">{{ pais.translations.de }}</span>
+            <span class="badge bg-primary mr-1">{{ pais.translations.es }}</span>
+            <span class="badge bg-primary mr-1">{{ pais.translations.fr }}</span>
+            <span class="badge bg-primary mr-1">{{ pais.translations.ja }}</span>
+            <span class="badge bg-primary mr-1">{{ pais.translations.it }}</span>
+            <span class="badge bg-primary mr-1">{{ pais.translations.hu }}</span>
+        </div>
+    </div>
+
+    <!-- <pre class="mt-5">
+        {{ pais | json }}
+    </pre> -->
+</ng-template>
+
