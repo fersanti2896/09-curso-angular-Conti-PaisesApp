@@ -1,15 +1,15 @@
-<div *ngIf="!pais else divPais" class="alert alert-info">
+<div *ngIf="!pais else divPais" class="alert alert-info animate__animated animate__flash">
     Espere por favor...
 </div>
 
-<ng-template #divPais>
+<ng-template #divPais >
     <div class="row">
         <div class="col-12">
             <h1>País: <small>{{ pais.name }}</small></h1>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row animate__animated animate__flipInX">
         <div class="col-4">
             <h3>Bandera: </h3>
             <img [src]="pais.flags.svg" class="img-thumbnail">
@@ -47,8 +47,8 @@
         </div>
     </div>
 
-    <h3>Traducciones</h3>
-    <div class="row">
+    <h3 class="animate__animated animate__flipInX">Traducciones</h3>
+    <div class="row animate__animated animate__flipInX">
         <div class="col">
             <span class="badge bg-primary mr-1">{{ pais.translations.br }}</span>
             <span class="badge bg-primary mr-1">{{ pais.translations.pt }}</span>

@@ -1,19 +1,21 @@
-<h2>Por Capital</h2>
-<hr>
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h2>Por Capital</h2>
+    <hr>
 
-<div class="row">
-    <div class="col">
-        <app-paises-input
-            (onEnter)="buscar($event)"
-            placeholder="Buscar Capital..."       
-        >
-        </app-paises-input>
+    <div class="row">
+        <div class="col">
+            <app-paises-input
+                (onEnter)="buscar($event)"
+                placeholder="Buscar Capital..."       
+            >
+            </app-paises-input>
+        </div>
     </div>
+    <hr>
 </div>
-<hr>
 
 <div *ngIf="valError"
-     class="alert alert-danger">
+     class="alert alert-danger animate__animated animate__wobble">
     No se encontró ningún país con el término {{ termino }}
 </div>
 
