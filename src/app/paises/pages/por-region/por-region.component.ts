@@ -33,7 +33,7 @@ export class PorRegionComponent {
     // Hacer el llamado al servicio
     this.paisService.buscarRegion(region)
         .subscribe(region => {
-          console.log(region);
+          // console.log(region);
           this.paises = region;
         }, err => {
           this.paises = [];
